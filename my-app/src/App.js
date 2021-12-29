@@ -4,13 +4,13 @@ import { useState } from 'react';
 export const App = () => {
   const [ count, setCount ] = useState(0);
   const increase = () => {
-    setCount(count + 1);
+    setCount(count => count + 1);
   };
   const reduce = () => {
-    setCount(count - 1);
+    setCount(count => count - 1);
   };
   const initial = () => {
-    setCount(count === 0);
+    setCount(0);
   };
   
   
