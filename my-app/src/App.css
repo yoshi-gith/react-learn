@@ -57,8 +57,12 @@ table {
   font-size: 13px;
 }
 th,
-td {
+td,
+tr {
   border: solid 1px #c0c0c0;
+}
+tr {
+  text-align: center;
 }
 th {
   background-color: #f2f2f2;

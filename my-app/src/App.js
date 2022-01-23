@@ -18,7 +18,9 @@ export const App = () => {
     setCountList(countList => countList + 1);
     const sampleTable = document.querySelector("table");
     const index = sampleTable.rows.length;
-    sampleTable.insertRow(index);
+    const interCell = sampleTable.insertRow(index);
+    interCell.innerHTML = "サンプル";
+    console.log(sampleTable.insertRow());
   };
   const initialList = () => {
     setCountList(0);
