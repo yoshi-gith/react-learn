@@ -19,11 +19,12 @@ export const App = () => {
     const sampleTable = document.querySelector("table");
     const index = sampleTable.rows.length;
     const interCell = sampleTable.insertRow(index);
-    interCell.innerHTML = "サンプル";
-    console.log(sampleTable.insertRow());
+    interCell.innerHTML = `サンプル ${index} `;
   };
   const initialList = () => {
     setCountList(0);
+    const sampleTable = document.querySelector("table");
+    while (sampleTable.rows.length > 0) sampleTable.deleteRow(1);
   };
 
   
