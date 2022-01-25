@@ -17,7 +17,7 @@ export const App = () => {
   const [ countList, setCountList ] = useState(0);
   const increaseList = () => {
     setCountList(countList => countList + 1);
-    const element = <tr>`サンプル ${index} `</tr>;
+    const element = <tr>"テスト"</tr>;
     ReactDOM.render(element, document.querySelector('tbody'));
     // const sampleTable = document.querySelector("table");
     // const index = sampleTable.rows.length;
