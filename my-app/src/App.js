@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import ReactDom from 'react-dom';
 
 export const App = () => {
   const [ count, setCount ] = useState(0);
@@ -16,10 +17,12 @@ export const App = () => {
   const [ countList, setCountList ] = useState(0);
   const increaseList = () => {
     setCountList(countList => countList + 1);
-    const sampleTable = document.querySelector("table");
-    const index = sampleTable.rows.length;
-    const interCell = sampleTable.insertRow(index);
-    interCell.innerHTML = `サンプル ${index} `;
+    const element = <tr>`サンプル ${index} `</tr>;
+    ReactDOM.render(element, document.querySelector('tbody'));
+    // const sampleTable = document.querySelector("table");
+    // const index = sampleTable.rows.length;
+    // const interCell = sampleTable.insertRow(index);
+    // interCell.innerHTML = `サンプル ${index} `;
   };
   const initialList = () => {
     setCountList(0);
@@ -51,9 +54,12 @@ export const App = () => {
         </div>
         <div className='list'>
           <table>
-            <tr>
-              <th>リスト</th>
-            </tr>
+            <thead>
+              <tr>
+                <th>リスト</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
           </table>
         </div>
       </div>
