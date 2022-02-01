@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 
 export const App = () => {
   const [ count, setCount ] = useState(0);
@@ -15,10 +15,12 @@ export const App = () => {
   };
 
   const [ countList, setCountList ] = useState(0);
+  const [ createList, setCreateList ] = useState("");
   const increaseList = () => {
     setCountList(countList => countList + 1);
-    const element = <tr>"テスト"</tr>;
-    ReactDOM.render(element, document.querySelector('tbody'));
+    const newList = [...createList, <tr> サンプル </tr>]
+    setCreateList(newList)
+    ReactDOM.render(createList, document.querySelector('tbody'));
     // const sampleTable = document.querySelector("table");
     // const index = sampleTable.rows.length;
     // const interCell = sampleTable.insertRow(index);
