@@ -18,9 +18,9 @@ export const App = () => {
   const [ createList, setCreateList ] = useState("");
   const increaseList = () => {
     setCountList(countList => countList + 1);
-    const newList = [...createList, <tr> サンプル </tr>]
-    setCreateList(newList)
-    ReactDOM.render(createList, document.querySelector('tbody'));
+    const newList = [...createList, <tr> サンプル {countList + 1} </tr>]
+    setCreateList(newList);
+    ReactDOM.render(newList, document.querySelector('tbody'));
     // const sampleTable = document.querySelector("table");
     // const index = sampleTable.rows.length;
     // const interCell = sampleTable.insertRow(index);
@@ -28,8 +28,10 @@ export const App = () => {
   };
   const initialList = () => {
     setCountList(0);
-    const sampleTable = document.querySelector("table");
-    while (sampleTable.rows.length > 0) sampleTable.deleteRow(1);
+    setCreateList("");
+    ReactDOM.render("", document.querySelector('tbody'));
+    // const sampleTable = document.querySelector("table");
+    // while (sampleTable.rows.length > 0) sampleTable.deleteRow(1);
   };
 
   
