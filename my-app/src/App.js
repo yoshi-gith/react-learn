@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 import ReactDOM from 'react-dom';
 
 export const App = () => {
@@ -20,12 +20,15 @@ export const App = () => {
     setCountList(countList => countList + 1);
     const newList = [...createList, <tr> サンプル {countList + 1} </tr>]
     setCreateList(newList);
-    ReactDOM.render(newList, document.querySelector('tbody'));
+    // ReactDOM.render(newList, document.querySelector('tbody'));
     // const sampleTable = document.querySelector("table");
     // const index = sampleTable.rows.length;
     // const interCell = sampleTable.insertRow(index);
     // interCell.innerHTML = `サンプル ${index} `;
   };
+  useEffect(() => {
+    ReactDOM.render(createList, document.querySelector('tbody'));
+  });
   const initialList = () => {
     setCountList(0);
     setCreateList("");
