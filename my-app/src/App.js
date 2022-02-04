@@ -26,13 +26,13 @@ export const App = () => {
     // const interCell = sampleTable.insertRow(index);
     // interCell.innerHTML = `サンプル ${index} `;
   };
-  useEffect(() => {
-    ReactDOM.render(createList, document.querySelector('tbody'));
-  });
+  // useEffect(() => {
+  //   ReactDOM.render(createList, document.querySelector('tbody'));
+  // });
   const initialList = () => {
     setCountList(0);
     setCreateList("");
-    ReactDOM.render("", document.querySelector('tbody'));
+    // ReactDOM.render("", document.querySelector('tbody'));
     // const sampleTable = document.querySelector("table");
     // while (sampleTable.rows.length > 0) sampleTable.deleteRow(1);
   };
@@ -66,7 +66,7 @@ export const App = () => {
                 <th>リスト</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>{createList}</tbody>
           </table>
         </div>
       </div>
