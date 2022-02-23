@@ -69,6 +69,25 @@ export const App = () => {
             <tbody>{createList}</tbody>
           </table>
         </div>
+
+        <div className='buttonClassList'>
+          <button className='buttonList' onClick={increaseList}>リスト作成</button>
+          <button onClick={initialList}>初期化</button>
+        </div>
+        <div className='resultList'>
+          <p className='text'>リスト数</p>
+          <input type="number" min="0" placeholder='数値を入力'></input>
+        </div>
+        <div className='list'>
+          <table>
+            <thead>
+              <tr>
+                <th>リスト</th>
+              </tr>
+            </thead>
+            <tbody>{createList}</tbody>
+          </table>
+        </div>
       </div>
     </>
   );

@@ -40,7 +40,8 @@ button {
   line-height: 40px;
 }
 
-.count {
+.count,
+input {
   width: 205px;
   height: 40px;
   text-align: center;
@@ -48,6 +49,7 @@ button {
   border-color: #c0c0c0;
   border-width: 1px;
   line-height: 40px;
+  font-size: 15px;
 }
 
 table {
@@ -69,4 +71,8 @@ tr {
 th {
   background-color: #f2f2f2;
   font-weight: normal;
+}
+
+.list {
+  margin-bottom: 70px;
 }
