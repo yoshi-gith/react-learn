@@ -66,7 +66,7 @@ export const App = () => {
                 <th>リスト</th>
               </tr>
             </thead>
-            <tbody>{createList}</tbody>
+            {/* <tbody>{createList}</tbody> */}
           </table>
         </div>
 
