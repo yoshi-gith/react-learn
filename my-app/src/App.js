@@ -3,6 +3,7 @@ import { useEffect,useState } from 'react';
 import ReactDOM from 'react-dom';
 
 export const App = () => {
+  // 数字が増える 
   const [ count, setCount ] = useState(0);
   const increase = () => {
     setCount(count => count + 1);
@@ -14,6 +15,7 @@ export const App = () => {
     setCount(0);
   };
 
+  // リスト作成を押すとリストが1つずつ増える
   const [ countList, setCountList ] = useState(0);
   const [ createList, setCreateList ] = useState("");
   const increaseList = () => {
@@ -35,6 +37,22 @@ export const App = () => {
     // ReactDOM.render("", document.querySelector('tbody'));
     // const sampleTable = document.querySelector("table");
     // while (sampleTable.rows.length > 0) sampleTable.deleteRow(1);
+  };
+
+  // リスト数で指定した数リストが増える
+  const [ numberCreateList, setNumberCreateList ] = useState("")
+  const input = document.querySelector(".input");
+  const numberList = () => {
+    const number = input.value;
+    console.log(number);
+    for(let index=0; index<number; index++) {
+      setNumberCreateList(...numberCreateList, <tr> サンプル </tr>);
+      console.log(index);
+    };
+  };
+  const initialNumberList = () => {
+    setNumberCreateList("");
+    input.value="";
   };
 
   
@@ -66,17 +84,17 @@ export const App = () => {
                 <th>リスト</th>
               </tr>
             </thead>
-            {/* <tbody>{createList}</tbody> */}
+            <tbody>{createList}</tbody>
           </table>
         </div>
 
         <div className='buttonClassList'>
-          <button className='buttonList' onClick={increaseList}>リスト作成</button>
-          <button onClick={initialList}>初期化</button>
+          <button className='buttonList' onClick={numberList}>リスト作成</button>
+          <button onClick={initialNumberList}>初期化</button>
         </div>
         <div className='resultList'>
           <p className='text'>リスト数</p>
-          <input type="number" min="0" placeholder='数値を入力'></input>
+          <input className='input' type="number" min="0" placeholder='数値を入力'></input>
         </div>
         <div className='list'>
           <table>
@@ -85,7 +103,7 @@ export const App = () => {
                 <th>リスト</th>
               </tr>
             </thead>
-            <tbody>{createList}</tbody>
+            <tbody>{numberCreateList}</tbody>
           </table>
         </div>
       </div>
