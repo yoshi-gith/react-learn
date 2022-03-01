@@ -41,9 +41,9 @@ export const App = () => {
 
   // リスト数で指定した数リストが増える
   const [ numberCreateList, setNumberCreateList ] = useState("")
+  const inputTag = document.querySelector(".input");
   const numberList = () => {
-    const input = document.querySelector(".input");
-    const number = input.value;
+    const number = inputTag.value;
     console.log(number);
     for(let index=0; index<number; index++) {
       setNumberCreateList(numberCreateList => [...numberCreateList, <tr> サンプル </tr>]);
@@ -52,8 +52,7 @@ export const App = () => {
   };
   const initialNumberList = () => {
     setNumberCreateList("");
-    const input = document.querySelector(".input");
-    input.value="";
+    inputTag.value="";
   };
   
 
@@ -95,7 +94,7 @@ export const App = () => {
         </div>
         <div className='resultList'>
           <p className='text'>リスト数</p>
-          <input className='input' type="number" min="0" placeholder='数値を入力' defaultValue="数値を入力"></input>
+          <input className='input' type="number" min="0" placeholder='数字を入力' defaultValue="数字を入力"></input>
         </div>
         <div className='list'>
           <table>
