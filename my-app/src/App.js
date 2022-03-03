@@ -41,8 +41,8 @@ export const App = () => {
 
   // リスト数で指定した数リストが増える
   const [ numberCreateList, setNumberCreateList ] = useState("")
-  const inputTag = document.querySelector(".input");
   const numberList = () => {
+    const inputTag = document.querySelector(".input");
     const number = inputTag.value;
     console.log(number);
     for(let index=0; index<number; index++) {
@@ -52,6 +52,7 @@ export const App = () => {
   };
   const initialNumberList = () => {
     setNumberCreateList("");
+    const inputTag = document.querySelector(".input");
     inputTag.value="";
   };
   
