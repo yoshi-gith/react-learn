@@ -56,6 +56,10 @@ export const App = () => {
     inputTag.value="";
   };
   
+  useEffect(() => {
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+  
 
   return (
     <>
